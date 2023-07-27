@@ -1,0 +1,8 @@
+# Headphone Website
+## CSS, advanced
+
+With this project, all assets and design is provided. You are to bring this design to life without the use of any external libraries.
+
+I think this is very doable and I am ready to get started
+
+Author Carbell Kofi Sarfo

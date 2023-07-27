@@ -1,0 +1,333 @@
+/* 
+1. Global
+2. Base
+3. Layouts
+4. sections
+*/
+
+
+/* ========================================================================= 
+                              Global  
+============================================================================ */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+:root {
+    --clr-primary: #C271FF;
+    --clr-black: #090909;
+    --clr-white: #fff;
+    --clr-grey-dark: #071629; 
+    --clr-grey-light: #ededed; 
+}
+
+body {
+    width: 100%;
+    font-family: 'source-sans-pro', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--clr-grey-dark);
+    line-height: 1.5;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: bold;
+}
+
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    padding: 1.5rem 3rem;
+    border-radius: 3rem;
+    box-shadow: 0 .5rem .2rem rgba(0, 0, 0, 0.392);
+    transition: .4s;
+}
+.btn:hover,
+.btn:focus {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.592);
+    opacity: .9;
+    transform: translateY(-3px);
+}
+.btn-primary {
+    background-color: var(--clr-primary);
+    color: var(--clr-white);
+}
+
+
+/* helpers /mixins */
+.purple-text {
+    color: var(--clr-primary);
+}
+.mb-100 {
+    margin-bottom: 100px;
+}
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+
+/* ========================================================================= 
+                              Layouts  
+============================================================================ */
+.container {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+}
+.wrapper {
+    padding-inline: 24px;
+}
+ul.row {
+    width: 100%;
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+    /* flex-wrap: wrap; */
+}
+.col-1-4 {
+    width: calc((100% / 4));
+}
+.col-1-2 {
+    width: calc((100% / 2));
+}
+
+@media screen and (max-width: 768px) {
+
+    .col-1-4 {
+        width: calc((100% / 2) - 2rem);
+    }
+}
+
+
+
+
+/* ====================== NAVIGATION ===================== */
+.nav-bar {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.nav-bar nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 0;
+}
+.nav-bar .nav-list {
+    display: flex;
+    list-style: none;
+}
+.nav-bar .nav-link {
+    text-decoration: none;
+    color: var(--clr-white);
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    transition: .4s ease;
+    padding: 2rem 3rem;
+}
+.nav-bar .nav-link:hover,
+.nav-bar .nav-link:focus {
+    color: var(--clr-primary);
+}
+.nav-bar .nav-item:not(:last-child) {
+    margin-right: 2rem;
+}
+
+
+
+
+/* ====================== SECTION-HERO ===================== */
+.section-hero {
+    width: 100%;
+    height: calc(100vh + 40rem);
+    background-image: url(./assets/background.png);
+    background-size: cover;
+    background-position: top;
+    padding-top: 15rem;
+    text-align: center;
+}
+.section-hero .hero-text {
+    padding-top: 10rem;
+    margin-bottom: 25rem;
+}
+.section-hero .hero-text h1 {
+    color: var(--clr-white);
+    font-size: 10rem;
+    line-height: 1;
+}
+.hero-text p {
+    color: var(--clr-white);
+    margin: 5rem 0;
+    text-transform: uppercase;
+    word-spacing: 5rem;
+}
+
+
+
+/* ====================== SECTION-QUOTE ===================== */
+.section-quote {
+    width: 100%;
+    padding: 10rem 0;
+    background-color: var(--clr-primary);
+    color: var(--clr-white);
+}
+.section-quote .quote-container {
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+}
+.section-quote  .text q {
+    margin-bottom: 2rem;
+    display: block;
+}
+.section-quote  .text p {
+    font-style: italic;
+}
+
+
+
+
+
+/* ====================== SECTION-VIDEO ===================== */
+.section-video {
+    width: 100%;
+    padding: 10rem 0;
+}
+.section-video h1 {
+    text-align: center;
+}
+
+.section-video .video {
+}
+.section-video .video img {
+    width: 100%;
+}
+.section-video .image {
+    position: relative;
+    z-index: 1;
+}
+.section-video .image .play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    transform: translate(-50%, -50%);
+}
+.video h3 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin: 1rem 0;
+}
+.video .author {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    color: var(--clr-primary);
+    margin: 2rem 0;
+}
+.video .author img {
+    width: 50px;
+    
+}
+.video .rating {
+    display: flex;
+    justify-content: space-between;
+    color: var(--clr-primary);
+}
+.video .rating img {
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+}
+
+
+
+
+/* ====================== SECTION-MEMBERSHIP ===================== */
+.section-membership {
+    padding: 7rem 0;
+    background-color: var(--clr-grey-dark);
+    color: var(--clr-white);
+    text-align: center;
+}
+.section-membership h3 {
+    margin: 2rem 0;
+}
+
+/* ====================== SECTION-FAQ ===================== */
+.section-faq {
+    padding: 7rem 0;
+}
+.section-faq .faq-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    list-style: none;
+    gap: 10rem 5rem;
+}
+.section-faq .faq-container h3 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+.section-faq h1 {
+    text-align: center;
+    font-size: 6rem;
+    font-weight: 400;
+}
+
+
+
+
+
+
+
+/* ====================== FOOTER ===================== */
+footer {
+    background-color: var(--clr-grey-dark);
+    padding: 10rem 0 3rem;
+}
+footer .footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+footer .footer-nav {
+    display: flex;
+    list-style: none;
+}
+footer .footer-nav li:not(:last-child) {
+    margin-right: 2rem;    
+}
+footer .footer-nav a {
+    display: inline-block;
+
+}
+footer .copy {
+    color: var(--clr-white);
+    opacity: .35;
+    text-align: center;
+}
+footer .copy a {
+    color: red;
+    opacity: 1;
+}
